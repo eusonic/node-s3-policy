@@ -1,8 +1,7 @@
 
 # s3-policy
 
-  [S3 policy][] generation for client-side uploads. By default, `Content-Type` and
-  `Content-Length` form fields are __required__, but can contain any value.
+  [S3 policy][] generation for client-side uploads. By default, `Content-Type` form field is __required__, but can contain any value.
 
 ## Options
 
@@ -15,7 +14,6 @@ Create an s3 policy and signature via `opts`:
  - `key` access key
  - `name` restrict key to prefix [""]
  - `type` restrict content-type prefix [""]
- - `length` max size restriction
  - `conditions` an optional Array of custom "conditions" to include in the policy
 
 An object with `.signature` and `.policy` is returned.
@@ -27,7 +25,6 @@ var policy = require('s3-policy');
 
 var p = policy({
   secret: 'something',
-  length: 5000000,
   bucket: 'i.cloudup.com',
   key: 'asdfasdfaewrw',
   expires: new Date(Date.now() + 60000),

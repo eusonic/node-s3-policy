@@ -3,7 +3,6 @@ var policy = require('./');
 
 var p = policy({
   secret: 'something',
-  length: 5000000,
   bucket: 'i.cloudup.com',
   key: 'asdfasdfaewrw',
   expires: new Date(Date.now() + 60000),
